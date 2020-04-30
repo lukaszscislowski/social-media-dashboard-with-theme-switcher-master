@@ -1,0 +1,92 @@
+ 
+
+ // Primary
+ $color-limeGreen: hsl(163, 72%, 41%);
+ $color-red: hsl(356, 69%, 56%);
+ $color-fb: hsl(195, 100%, 50%);
+ $color-tw: hsl(203, 89%, 53%);
+ $color-inst: gradient(#f69d3c, #3f87a6);
+ $color-yt:  hsl(348, 97%, 39%);
+ 
+ // Dark Theme
+
+ $color-Toggle: linear-gradient( hsl(210, 78%, 56%),hsl(146, 68%, 55%));
+ 
+// Light Theme
+ 
+$color-LightToggle: hsl(230, 22%, 74%);
+
+// Dark Theme
+
+.dark{
+
+ $color-bg: hsl(230, 17%, 14%);
+ //(Top BG Pattern)
+ $color-bg-top: hsl(232, 19%, 15%);
+ //(card BG)
+ $color-card-bg: hsl(228, 28%, 20%);
+//Desaturated Blue (Text)
+ $color-text: hsl(228, 34%, 66%);
+//White (Text)
+ $color-textSec: hsl(0, 0%, 100%);
+}
+
+
+
+ // Light Theme
+
+.light{
+
+// White (BG)
+$color-bg: hsl(0, 0%, 100%);
+//Very Pale Blue (Top BG Pattern)
+$color-bg-top: hsl(225, 100%, 98%);
+//Light Grayish Blue (Card BG)
+$color-card-bg: hsl(227, 47%, 96%);
+//Dark Grayish Blue (Text)
+$color-text: hsl(228, 12%, 44%);
+//Very Dark Blue (Text)
+$color-textSec: hsl(230, 17%, 14%);
+}
+
+// Typography
+
+// Body Copy
+
+//Font size (Overview Card Headings): 14px
+$font-size: 14px;
+
+$font-base: 10px;
+
+// grid
+$grid-base: $font-base;
+// odstępy pomiędzy kolumnami
+$gutter: 1.5 * $grid-base;
+
+// Font
+
+//Family: [Inter](https://fonts.google.com/specimen/Inter)
+$font-weightI: 400;
+$font-weightII: 700;
+
+$font-family: 'Inter', sans-serif;
+$font-base: $font-family;
+
+//breackpoints
+
+$bp-sm: 375px;
+$bp-lg: 1440px;
+
+
+$small-media: 'screen and (max-width: #{$bp-sm})';
+
+@mixin screen($size: small) {
+
+    @if $size == 'small' {
+        @media #{$small-media} {
+            @content;
+            
+        }
+    }
+    
+}
