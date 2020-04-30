@@ -1,14 +1,24 @@
 @import './variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-.body {
-    background: $color-bg-dark;
-    font-family: $font-base;
+body {
+    font-family: $font-family;
+}
+
+.dark {
+    background: var(--bg);
+    color: var(--text);
 }
 
 .header {
@@ -21,12 +31,12 @@
         grid-template-columns: repeat(1, minmax(200px, 1fr));
     }
 }
-.header, .cards-container__header, .overview-container__count, .second-title {
-    color: $color-text;
-}
-.header__subtitle, .cards-container__user, .cards-container__title, .overview-container__header {
-    color: $color-blueText;
-}
+// .header, .cards-container__header, .overview-container__count, .second-title {
+//     color: var(--text);
+// }
+// .header__subtitle, .cards-container__user, .cards-container__title, .overview-container__header {
+//     color: var(--text);
+// }
 .header__subtitle {
     margin-top: 0;
 }
@@ -50,7 +60,7 @@
 	text-indent: -9999px;
 	width: 40px;
 	height: 20px;
-	background: $color-Toggle;
+	background: $color-ToggleDark;
 	display: block;
 	border-radius: 100px;
     position: relative;
@@ -114,7 +124,7 @@
     display: grid;
     justify-items: center;
     border-radius: 5px;
-    background: $color-card-bg;
+    background: var(--card-bg);
 
     @at-root #{&}--fb {
         border-top: 4px solid $color-fb;
@@ -128,7 +138,7 @@
     @at-root #{&}--yt {
         border-top: 4px solid $color-yt;
     }
-    &:hover{background:  $color-bg-top; cursor: pointer;}
+    &:hover{background:  var(--bg-top); cursor: pointer;}
 }
 
 .cards-container__user {
@@ -150,7 +160,7 @@
 
 .overview-container__card {
     display: grid;
-    background: $color-card-bg;
+    background: var(--card-bg);
     min-height: 125px;
     border-radius: 5px;
 }

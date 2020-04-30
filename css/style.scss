@@ -1,0 +1,259 @@
+@import 'config/colors';
+@import 'config/fonts';
+@import 'config/mixins';
+
+@import 'components/switcher';
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  padding: 22px;
+  position: relative;
+}
+
+header {
+  padding-bottom: 22px;
+  h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+
+    @include for-tablet-portrait-up {
+      font-size: 24px;
+    }
+  }
+  p {
+    color: var(--text-secondary);
+    font-weight: bold;
+  }
+
+  @include for-tablet-portrait-up {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.page-title {
+  padding-bottom: 22px;
+
+  @include for-tablet-portrait-up {
+    padding: 0;
+  }
+}
+
+.main-cards-container {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+
+  @include for-tablet-portrait-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 22px;
+  }
+
+  @include for-tablet-landscape-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 22px;
+  }
+}
+
+.main-card {
+  background: var(--card-bg);
+  margin-bottom: 22px;
+  padding: 28px 0;
+  text-align: center;
+  border-radius: 5px;
+  border-top: 5px solid transparent;
+  &:hover {
+    background: var(--hover-bg);
+  }
+}
+
+// Facebook card top
+.main-card:nth-child(1) {
+  border-top-color: $facebook;
+}
+
+// Twitter card top
+.main-card:nth-child(2) {
+  border-top-color: $twitter;
+}
+
+// Instagram card top
+.main-card:nth-child(3) {
+  position: relative;
+  border-top: 5px solid transparent;
+  border-radius: 0 0 5px 5px;
+  margin-top: 5px;
+  &:before {
+    content: '';
+    position: absolute;
+    height: 5px;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    margin: -10px 0 0 0;
+    border-radius: 5px 5px 0 0;
+    background: $instagram;
+  }
+}
+
+// Youtube card top
+.main-card:nth-child(4) {
+  border-top-color: $youtube;
+}
+
+.username {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    margin-right: 8px;
+    font-size: 24px;
+  }
+}
+
+.fa-facebook-square {
+  color: $facebook;
+}
+
+.fa-twitter {
+  color: $twitter;
+}
+
+.fa-instagram {
+  background: $instagram;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-youtube-square {
+  color: $youtube;
+}
+
+.followers__number {
+  font-size: 42px;
+  line-height: 42px;
+  margin-bottom: 8px;
+}
+
+.followers__title {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.followers__today {
+  font-weight: bold;
+  margin-top: 30px;
+  i {
+    margin-right: 6px;
+  }
+}
+
+.up {
+  color: $lime-green;
+  i {
+    font-size: 12px !important;
+    margin-right: 6px;
+  }
+}
+
+.down {
+  color: $bright-red;
+  i {
+    font-size: 12px !important;
+    margin-right: 6px;
+  }
+}
+
+.overview__title {
+  color: var(--text-secondary);
+  font-size: 18px;
+  margin: 10px 0 24px;
+}
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+
+  @include for-tablet-portrait-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 22px;
+  }
+
+  @include for-tablet-landscape-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 22px;
+  }
+}
+
+.overview-card {
+  background: var(--card-bg);
+  margin-bottom: 22px;
+  padding: 22px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:hover {
+    background: var(--hover-bg);
+  }
+
+}
+
+.overview__number {
+  text-align: left;
+  p {
+    margin-bottom: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    color: var(--text-secondary);
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
+.overview__percents {
+  text-align: right;
+  i:first-child {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+  p {
+    font-size: 12px;
+    padding-top: 4px;
+    font-weight: bold;
+    height: 12px;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  a {
+    color: var(--text-secondary);
+  }
+}
