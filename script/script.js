@@ -1,6 +1,6 @@
 'use strict' 
 
-const toggle = document.querySelector('#toggle input');
+const toggle = document.querySelector('.toggle__group input');
 
 function Theme() {
   if (this.checked) {
