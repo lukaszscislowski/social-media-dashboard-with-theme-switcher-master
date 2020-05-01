@@ -6,7 +6,7 @@
  $color-red: hsl(356, 69%, 56%);
  $color-fb: hsl(195, 100%, 50%);
  $color-tw: hsl(203, 89%, 53%);
- $color-inst: gradient(#f69d3c, #3f87a6);
+ $color-inst:linear-gradient(45deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
  $color-yt:  hsl(348, 97%, 39%);
  
 
@@ -53,6 +53,7 @@ $font-base: $font-family;
 //breackpoints
 
 $bp-sm: 375px;
+$bp-md: 600px;
 $bp-lg: 1440px;
 
 
@@ -62,6 +63,18 @@ $small-media: 'screen and (max-width: #{$bp-sm})';
 
     @if $size == 'small' {
         @media #{$small-media} {
+            @content;
+            
+        }
+    }
+    
+}
+$medium-media: 'screen and (max-width: #{$bp-md})';
+
+@mixin screen($size: medium) {
+
+    @if $size == 'medium' {
+        @media #{$medium-media} {
             @content;
             
         }

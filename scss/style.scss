@@ -28,7 +28,10 @@ body {
     margin: 2% auto; 
     
 
-    @include screen(){
+    @include screen(small){
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+    @include screen(medium){
         grid-template-columns: repeat(1, minmax(200px, 1fr));
     }
 }
@@ -37,10 +40,10 @@ body {
     margin-top: 0;
 }
 
-.header__h2,.cards-container__header, .overview-container__count {
+.header__h2,.cards-container__header, .overview-container__count,  .second-title__header {
     color: var(--textSec);
 }
-.header__subtitle, .toggle__title, .cards-container__title, .overview-container__header, .second-title__header {
+.header__subtitle, .toggle__title, .cards-container__title, .overview-container__header, .cards-container__user {
     color: var(--text);
 }
 
@@ -110,7 +113,7 @@ label:active:after {
 
 
 .toggle__group {
-    margin:auto;
+    margin:0 ;
 }
 
 .second-title {
@@ -121,6 +124,8 @@ label:active:after {
 
 .cards-container__header {
     margin-top: 22px;
+    font-size: 3* $font-size;
+    
 }
 .cards-container__title {
     margin: 0;
@@ -128,7 +133,7 @@ label:active:after {
 
 .cards-container__subtitle {
     color:$color-limeGreen;
-    padding-top: 20%;
+    padding: 10%;
 
     &--red{
         color: $color-red;  
@@ -142,24 +147,45 @@ label:active:after {
     background: var(--card-bg);
 
     @at-root #{&}--fb {
-        border-top: 4px solid $color-fb;
+        border-top: 5px solid $color-fb;
     }
     @at-root #{&}--tw {
-        border-top: 4px solid $color-tw;
+        border-top: 5px solid $color-tw;
     }
     @at-root #{&}--inst { 
-        border-top: 4px solid;
+        border-top: 5px solid transparent;
     }
     @at-root #{&}--yt {
-        border-top: 4px solid $color-yt;
+        border-top: 5px solid $color-yt;
     }
     &:hover{background:  var(--bg-top); cursor: pointer;}
 }
 
+.cards-container__card--inst {
+    margin-top: 5px;
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    &::before {
+        content: '';
+        position: absolute;
+        height: 5px;
+        border-radius: 5px 5px 0 0;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: -10px 0 0 0;
+        background:$color-inst;
+        height: 5px;
+    }
+
+}
+
+
 .cards-container__user {
     display: grid;
     grid-auto-flow: column;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .container {
@@ -187,6 +213,7 @@ label:active:after {
     display:grid;
     justify-content: space-between;
     grid-auto-flow: column;
+    padding-top: 20px;
 }
 .overview-container__subtitle {
     display: grid;
@@ -195,8 +222,8 @@ label:active:after {
 
 .overview-container__svg {
     display:block;
-    margin: auto;
-    padding-right: 20px;
+    margin: 0 -10px;
+    
 }
 
 .overview-container__header, .overview-container__subtitle {
@@ -205,8 +232,9 @@ label:active:after {
 
 .overview-container__counter {
     justify-self: self-end;
-    width: 40%;
+    width: 61%;
     padding: 22px 5px;
+    text-align: center;
 
     @at-root #{&}--red {
         color: $color-red;
