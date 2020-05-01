@@ -105,13 +105,13 @@ label {
 label:after {
   content: "";
   position: absolute;
-  top: 0px;
+  top: 1px;
   left: 19px;
-  width: 19px;
-  height: 19px;
-  background: #fff;
+  width: 18px;
+  height: 18px;
+  background: var(--card-bg);
   border-radius: 90px;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 input:checked + label {
@@ -135,6 +135,12 @@ label:active:after {
   display: grid;
   width: 70%;
   margin: 20px auto;
+}
+
+@media screen and (max-width: 600px) {
+  .toggle__title {
+    margin-right: 193px;
+  }
 }
 
 .cards-container__header {
